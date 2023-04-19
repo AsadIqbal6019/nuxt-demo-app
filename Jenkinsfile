@@ -34,7 +34,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t asadiqbal6019/nuxt-demo-app:$BUILD_NUMBER .'
+                sh 'docker build -t asadiqbal6019/nuxt-demo-app:$BUILD_NUMBER.0 .'
             }
         }
         stage('login to dockerhub') {
@@ -44,7 +44,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push asadiqbal6019/nuxt-demo-app:$BUILD_NUMBER'
+                sh 'docker push asadiqbal6019/nuxt-demo-app:$BUILD_NUMBER.0'
             }
         }
 
